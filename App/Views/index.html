@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slim REST API</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <style>
+        .badge {
+            width: 80px;
+        }
+
+        .btn-link {
+            font-size: 1.2rem;
+        }
+
+        .jumbotron {
+            height: 150px;
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Slim REST API</h1>
+            <p class="lead">Documentation</p>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container mt-5 mb-5">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Info</h4>
+                <h6 class="card-subtitle mb-3 text-muted">Get information about API.</h6>
+                <ul class="list-group">
+                    <li class="list-group-item bg-light">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="badge badge-secondary py-2 mr-2    ">GET</span>
+                                <span class="font-weight-bold py-2">/api</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span>Get help about this API</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h4 class="card-title">Books</h4>
+                <h6 class="card-subtitle mb-3 text-muted">Manage books.</h6>
+                <ul class="list-group">
+                    <li class="list-group-item bg-light">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="badge badge-secondary py-2 mr-2">GET</span>
+                                <span class="font-weight-bold py-2 mr-3">/api/v1/books</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span>Get all books</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-light">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="badge badge-secondary py-2 mr-2">GET</span>
+                                <span class="font-weight-bold py-2 mr-3">/api/v1/books/id</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span>Get a single book with given id</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-success text-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="badge badge-success py-2 mr-2">POST</span>
+                                <span class="font-weight-bold py-2 mr-3">/api/v1/books</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span>Create a new book</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-primary text-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="badge badge-primary py-2 mr-2">PUT</span>
+                                <span class="font-weight-bold py-2 mr-3">/api/v1/books/id</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span>Update the book with given id</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item list-group-item-danger text-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="badge badge-danger py-2 mr-2">DELETE</span>
+                                <span class="font-weight-bold py-2 mr-3">/api/v1/books/id</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span>Delete the book with given id</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h4 class="card-title">Models</h4>
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link text-body" type="button" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Book
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                             data-parent="#accordionExample">
+                            <div class="card-body">
+                                <dl class="row">
+                                    <dt class="col-sm-3">id</dt>
+                                    <dd class="col-sm-9">integer</dd>
+                                    <dt class="col-sm-3">name</dt>
+                                    <dd class="col-sm-9">string</dd>
+                                    <dt class="col-sm-3">author</dt>
+                                    <dd class="col-sm-9">string</dd>
+                                    <dt class="col-sm-3">number</dt>
+                                    <dd class="col-sm-9">string</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
